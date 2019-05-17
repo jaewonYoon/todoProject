@@ -1,5 +1,5 @@
 # Todolist
-
+[final product](https://todoapp-bf8f6.firebaseapp.com)
 Built by [jaewonYoon](https://github.com/jaewonYoon)
 
 # how to connect in localhost
@@ -15,7 +15,7 @@ Built by [jaewonYoon](https://github.com/jaewonYoon)
 ### `npm start`
 
 - go to
-  [http://localhost:3000][df1] in your browser
+ >[http://localhost:3000] in your browser
 
 # How to build
 
