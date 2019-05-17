@@ -1,63 +1,93 @@
+# Todolist
 
-## Available Scripts
+Built by [jaewonYoon](https://github.com/jaewonYoon)
 
-In the project directory, you can run:
+# how to connect in localhost
+
+- Clone this repo in your local area (ex: ~/Desktop/todoProject)
+- cd ~/Desktop/todoProject
+- To install all the dependencies in package.json, type command below
+
+### `npm i`
+
+- to start localhost server, type command below
 
 ### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- go to
+  [http://localhost:3000][df1] in your browser
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+# How to build
 
+- To modify this repo and build your own project, follow instruction below
+- This app Using cloud firestore. To get your own apikey, go to firebase
+  [https://firebase.google.com ][df1]
 
-### `npm run build`
+- All the config setting is in src/config/fbConfig.js
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## fbConfig.js
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+```
+import {configKey} from './config.js';
+const config = {
+  apiKey: configKey.apiKey,
+  authDomain: "todoapp-bf8f6.firebaseapp.com",
+  databaseURL: configKey.databaseURL,
+  projectId: "todoapp-bf8f6",
+  storageBucket: "todoapp-bf8f6.appspot.com",
+  messagingSenderId: configKey.messagingSenderId,
+  appId: configKey.appId
+};
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+> As you can see, all the personal info is covered with variable, make a file like 'config.js' in same path with fbConfig.js
+> get your config info in firebase site, and set below
 
-### `npm run eject`
+```
+export const configKey = {
+  apiKey: "some key ",
+  authDomain: "some domain",
+  databaseURL: "some URL",
+  projectId: "some Id",
+  storageBucket: "blah blah blakh",
+  messagingSenderId: "some Id",
+  appId: "another some Id "
+};
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+After setting apikey, you should login firebase
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+//using terminal
+ > firebase login  // Sign in to Google
+ > firebase init  // Initiate your project
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Then You can build
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+ //using terminal
+  > npm run build
+```
 
-## Learn More
+Then you have folder name 'build'
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+ -root
+    -build
+    -dist
+    -src
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> move your files in 'build' to 'dist'
+> Then you are ready to deploy app
 
-### Code Splitting
+```
+> firebase deploy
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+# Tech
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+- [React.js]
+- [firebase]
+- [React-redux]
